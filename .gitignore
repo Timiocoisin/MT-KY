@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.egg-info/
+datasets/
+datasets_public/
+outputs/
+logs/
+*.pt
+*.pkl
+.DS_Store

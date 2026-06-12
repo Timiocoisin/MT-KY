@@ -1,0 +1,20 @@
+# Rank-N-Contrast (NeurIPS 2023, v3.2 §4 #9, 确认项 ④ 默认选项):
+# 与 resnet50 baseline 同构, 损失 = w_reg*L1 + w_rnc*RnC(pooled features)。
+# 注: 官方为两阶段(对比预训练 + 冻结线性探针); 统一训练预算下采用单阶段联合
+# 变体(论文 Implementation Details 需如实注明)。RnC 排序质量依赖 batch 多样
+# 性, 保持有效 batch=128(必要时 --accum-steps)。
+model:
+  name: rnc_resnet50
+  display_name: "RNC-ResNet50"
+  family: rnc
+  backbone: resnet50
+  backbone_input_size: 256
+  pretrained: true
+  label_mode: hard
+  loss: rnc
+  rnc_temperature: 2.0
+  head_hidden_dim: 512
+  pool: mean
+  loss_weights:
+    reg: 1.0
+    rnc: 1.0

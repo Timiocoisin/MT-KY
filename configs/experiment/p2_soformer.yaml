@@ -1,0 +1,8 @@
+# Protocol-II + SOFormer
+_base_:
+  - ../dataset/boilerwear_190.yaml
+  - ../train/default.yaml
+  - ../model/soformer.yaml
+
+protocol: protocol2
+seed: 42

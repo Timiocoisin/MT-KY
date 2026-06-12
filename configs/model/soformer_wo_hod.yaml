@@ -1,0 +1,32 @@
+model:
+  name: soformer_wo_hod
+  display_name: "SOFormer w/o HOD-Head"
+  family: soformer
+  backbone: axial_strip_cnn
+  backbone_input_size: 256
+  pretrained: false
+  backbone_kwargs:
+    base_channels: 64
+    num_features: 512
+    blocks_per_stage: 3
+  label_mode: hard
+  loss: soformer
+  fusion_layers: 2
+  fusion_heads: 8
+  coral_num_bins: 19
+  head_hidden_dim: 512
+  infer_alpha: 0.0
+  infer_beta: 0.0
+  loss_weights:
+    ord: 0.0
+    ldl: 0.0
+    reg: 1.0
+    mono: 0.15
+    cal: 0.05
+  ablation:
+    use_ast: true
+    use_ape: true
+    use_adm: true
+    use_hod: false
+    use_uncertainty: true
+    use_mono: true

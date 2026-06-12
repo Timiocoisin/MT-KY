@@ -1,0 +1,11 @@
+model:
+  name: efficientnet_b4
+  display_name: "EfficientNet-B4"
+  family: strip_regressor
+  backbone: efficientnet_b4
+  backbone_input_size: 256
+  pretrained: true
+  label_mode: hard
+  loss: smooth_l1
+  head_hidden_dim: 512
+  pool: mean

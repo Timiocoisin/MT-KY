@@ -1,0 +1,8 @@
+# Protocol-II + ResNet-50 baseline
+_base_:
+  - ../dataset/boilerwear_190.yaml
+  - ../train/default.yaml
+  - ../model/resnet50.yaml
+
+protocol: protocol2
+seed: 42

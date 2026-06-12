@@ -1,0 +1,9 @@
+model:
+  name: hog_lr
+  display_name: "HOG + LR"
+  family: hog_lr
+  label_mode: hard
+  loss: mse
+  hog_orientations: 9
+  hog_pixels_per_cell: [16, 16]
+  hog_cells_per_block: [2, 2]

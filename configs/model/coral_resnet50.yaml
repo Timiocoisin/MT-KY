@@ -1,0 +1,12 @@
+model:
+  name: coral_resnet50
+  display_name: "CORAL-ResNet50"
+  family: coral
+  backbone: resnet50
+  backbone_input_size: 256
+  pretrained: true
+  label_mode: hard
+  loss: coral
+  coral_num_bins: 19
+  head_hidden_dim: 512
+  pool: mean

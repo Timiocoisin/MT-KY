@@ -1,0 +1,11 @@
+model:
+  name: resnet50
+  display_name: "ResNet-50"
+  family: strip_regressor
+  backbone: resnet50
+  backbone_input_size: 256
+  pretrained: true
+  label_mode: hard
+  loss: smooth_l1
+  head_hidden_dim: 512
+  pool: mean

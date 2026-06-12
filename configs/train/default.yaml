@@ -1,0 +1,33 @@
+train:
+  device: cuda
+  epochs: 100
+  early_stopping_patience: 15
+  monitor_metric: val_mae
+  grad_clip_norm: 1.0
+  optimizer:
+    name: adamw
+    lr: 1.0e-4
+    weight_decay: 1.0e-4
+  scheduler:
+    name: cosine
+    min_lr: 1.0e-6
+    warmup_epochs: 5
+
+output:
+  results_dir: outputs/results
+  checkpoints_dir: outputs/checkpoints
+  figures_dir: outputs/figures
+
+evaluation:
+  metrics:
+    - mae
+    - medae
+    - rmse
+    - r2
+    - acc_at_5
+    - acc_at_10
+    - spearman
+    - qwk
+    - acc_at_stage_1
+    - acc_at_stage_3
+    - acc_at_stage_5

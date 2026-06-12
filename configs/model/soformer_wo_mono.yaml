@@ -1,0 +1,36 @@
+model:
+  name: soformer_wo_mono
+  display_name: "SOFormer w/o Monotonicity Loss"
+  family: soformer
+  backbone: axial_strip_cnn
+  backbone_input_size: 256
+  pretrained: false
+  backbone_kwargs:
+    base_channels: 64
+    num_features: 512
+    blocks_per_stage: 3
+  label_mode: ldl
+  loss: soformer
+  fusion_layers: 2
+  fusion_heads: 8
+  coral_num_bins: 19
+  head_hidden_dim: 512
+  infer_alpha: 0.0
+  infer_beta: 0.0
+  loss_weights:
+    ord: 0.20
+    ldl: 0.20
+    reg: 0.45
+    mono: 0.0
+    cal: 0.05
+  ablation:
+    use_ast: true
+    use_ape: true
+    use_adm: true
+    use_hod: true
+    use_uncertainty: true
+    use_mono: false
+
+data:
+  label_mode: ldl
+  ldl_sigma_folders: 1.0

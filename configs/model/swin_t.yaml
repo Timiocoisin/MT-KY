@@ -1,0 +1,12 @@
+# 近年代表 Transformer backbone (v3.2 §4 #4); 窗口注意力要求 224 输入
+model:
+  name: swin_t
+  display_name: "Swin-T"
+  family: strip_regressor
+  backbone: swin_tiny_patch4_window7_224
+  backbone_input_size: 224
+  pretrained: true
+  label_mode: hard
+  loss: smooth_l1
+  head_hidden_dim: 512
+  pool: mean

@@ -1,0 +1,14 @@
+# CORN (2022, CORAL 原作者改进版, v3.2 必加 baseline #8):
+# 与 coral_resnet50 同结构, 仅换条件训练损失与解码
+model:
+  name: corn_resnet50
+  display_name: "CORN-ResNet50"
+  family: corn
+  backbone: resnet50
+  backbone_input_size: 256
+  pretrained: true
+  label_mode: hard
+  loss: corn
+  coral_num_bins: 19
+  head_hidden_dim: 512
+  pool: mean

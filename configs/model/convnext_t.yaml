@@ -1,0 +1,12 @@
+# 近年代表现代 CNN backbone (v3.2 §4 #5)
+model:
+  name: convnext_t
+  display_name: "ConvNeXt-T"
+  family: strip_regressor
+  backbone: convnext_tiny
+  backbone_input_size: 256
+  pretrained: true
+  label_mode: hard
+  loss: smooth_l1
+  head_hidden_dim: 512
+  pool: mean

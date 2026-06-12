@@ -1,0 +1,15 @@
+model:
+  name: ldl_resnet50
+  display_name: "LDL-ResNet50"
+  family: ldl
+  backbone: resnet50
+  backbone_input_size: 256
+  pretrained: true
+  label_mode: ldl
+  loss: kl_div
+  head_hidden_dim: 512
+  pool: mean
+
+data:
+  label_mode: ldl
+  ldl_sigma_folders: 1.0

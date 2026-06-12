@@ -1,0 +1,24 @@
+# BoilerWear-190 dataset defaults
+data:
+  data_root: datasets
+  splits_dir: outputs/splits
+  reports_dir: outputs/reports
+  num_strips: 6
+  strip_size: 256
+  image_height: 256
+  image_width: 1536
+  auto_resize: true   # 原图非 256x1536 时自动缩放(原生分辨率数据直接可用)
+  photometric_aug: true
+  label_mode: hard
+  ldl_sigma_folders: 1.0
+  brightness: 0.15
+  contrast: 0.15
+  saturation: 0.10
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+
+loader:
+  batch_size: 8
+  num_workers: 0
+  pin_memory: true
+  drop_last: false

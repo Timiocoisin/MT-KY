@@ -1,0 +1,17 @@
+# 剥离 strip 预处理贡献的关键对照 (v3.2 §4 #10):
+# 复用与 SOFormer 相同的 AxialStripCNN 共享 encoder, 平均池化 + reg head, 从零训练
+model:
+  name: strip_pool
+  display_name: "StripPool"
+  family: strip_regressor
+  backbone: axial_strip_cnn
+  backbone_input_size: 256
+  pretrained: false
+  backbone_kwargs:
+    base_channels: 64
+    num_features: 512
+    blocks_per_stage: 3
+  label_mode: hard
+  loss: smooth_l1
+  head_hidden_dim: 512
+  pool: mean
